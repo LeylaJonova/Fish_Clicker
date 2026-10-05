@@ -335,6 +335,13 @@ Builder.load_string(r"""
 # Налаштовуємо екран гри
 <Game>:
 
+    # Малюємо фон на весь екран гри перед іншими віджетами
+    canvas.before:
+        Rectangle:
+            source: 'assets/images/level1.png'
+            pos: self.pos
+            size: self.size
+
     # Створюємо головний вертикальний контейнер
     BoxLayout:
 
@@ -348,20 +355,6 @@ Builder.load_string(r"""
         spacing: "20dp"
 
 
-        # Малюємо фон гри
-        canvas:
-
-            # Створюємо прямокутник із фоновою картинкою
-            Rectangle:
-
-                # Шлях до фонового зображення
-                source: 'assets/images/level1.png'
-
-                # Позиція фону
-                pos: self.pos
-
-                # Розмір фону
-                size: self.size
 
 
         # Верхнє меню гри
